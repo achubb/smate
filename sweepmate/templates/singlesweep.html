@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+	<div id="singlesweep">
+		<p>Name: {{ sweep.sweepname }}</p>
+		<p>Event: {{ sweep.sweepevent }}</p>
+	</div>
+
+	<!-- List all players / if backed show backer -->
+	<!-- Is player still in or out -->
+
+	<h3>Players</h3>
+	{% for sweepplayers in sweepplayers %}
+		<p>{% if sweepplayers.playerbacker == None %}
+			Nobody
+			{% else %}
+				{{ sweepplayers.playerbacker }} 
+			{% endif %}
+			is backing {{ sweepplayers.playername }}<p>
+	{% endfor %}
+
+
+{% endblock %}

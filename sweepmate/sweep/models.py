@@ -30,7 +30,7 @@ class Sweep(models.Model):
 class Player(models.Model):
 	playername = models.CharField(max_length=200)
 	playersweep = models.ForeignKey('Sweep')
-	playerbacker = models.ForeignKey('Backer')
+	playerbacker = models.ForeignKey('Backer', null=True, blank=True, default = None)
 	slug = models.SlugField(unique=True)
 
 	def __unicode__(self):

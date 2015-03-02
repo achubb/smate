@@ -2,9 +2,15 @@
 {% block content %}
 
 	<div id="sweepList">
-		{% for sweep in sweeps %}
-			{{ sweep }}
-		{% endfor %}
+		<ul>
+			{% for sweep in sweeps %}
+				<li>
+					<a href="/sweeps/{{ sweep.slug }}/">
+						{{ sweep }}
+					</a>
+				</li>
+			{% endfor %}
+		</ul>
 	</div>
 
 {% endblock %}
